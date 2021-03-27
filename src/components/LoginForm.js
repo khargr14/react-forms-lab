@@ -13,7 +13,9 @@ class LoginForm extends React.Component {
   }
 
   checkForInputs = event => {
-    
+    event.preventDefault()
+    if(this.state.username && this.state.password) {
+      this.props.handleLogin({username: this.state.username, password: this.state.password})
     }
   }
 
